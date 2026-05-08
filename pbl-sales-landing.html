@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Personal Branding for Sales Teams | Personal Brand Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8F7F4;
+  --paper:#FFFFFF;
+  --ink:#141412;
+  --ink2:#3A3830;
+  --ink3:#7A7870;
+  --teal:#2A9D95;
+  --teal-hi:rgba(56,178,170,0.25);
+  --yellow-hi:rgba(251,207,44,0.42);
+  --border:#D8D4CC;
+  --border2:#E6E2DA;
+  --dot:rgba(160,155,145,0.4);
+  --fd:'Poppins',system-ui,sans-serif;
+  --fb:'Poppins',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;font-weight:300}
+
+.hi{background:linear-gradient(transparent 56%,var(--teal-hi) 56%);display:inline}
+.hi-y{background:linear-gradient(transparent 56%,var(--yellow-hi) 56%);display:inline}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(248,247,244,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:30px;width:auto}
+.brand-name{font-family:var(--fd);font-size:0.95rem;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.nav-cta{font-family:var(--fb);font-size:0.8125rem;font-weight:400;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:0.55rem 1.375rem;border-radius:2px;transition:all 0.2s;letter-spacing:0.01em}
+.nav-cta:hover{background:var(--ink);color:#fff}
+
+/* SHARED */
+.w{max-width:1120px;margin:0 auto;padding:0 3rem}
+.sec-eyebrow{font-family:var(--fb);font-size:0.725rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.sec-h{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:600;line-height:1.1;letter-spacing:-0.015em;margin-bottom:1.25rem}
+.sec-h em{font-style:italic}
+.sec-body{font-size:1rem;color:var(--ink2);line-height:1.85;font-weight:300}
+
+/* HERO */
+.hero{padding:10rem 3rem 6rem;background:var(--paper);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot) 1.2px,transparent 1.2px);background-size:28px 28px;pointer-events:none}
+.hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.hero-tag{display:inline-block;font-family:var(--fb);font-size:0.675rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink2);margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:1rem;width:100%}
+h1.hero-h{font-family:var(--fd);font-size:clamp(3rem,6vw,5.6rem);font-weight:600;line-height:0.98;letter-spacing:-0.02em;margin-bottom:2.5rem;max-width:960px}
+h1.hero-h em{font-style:italic;font-weight:400}
+.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;padding-top:2.5rem;border-top:1px solid var(--border)}
+.hero-sub{font-size:1.0625rem;color:var(--ink2);line-height:1.82;max-width:440px;font-weight:300;margin-bottom:1.75rem}
+.btn-primary{display:inline-block;background:var(--ink);color:#fff;font-family:var(--fb);font-size:0.875rem;font-weight:400;letter-spacing:0.02em;padding:0.875rem 2rem;border-radius:2px;text-decoration:none;transition:background 0.2s}
+.btn-primary:hover{background:#2a2a26}
+.hero-stats{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:3px;overflow:hidden;align-self:end}
+.hstat{display:flex;align-items:baseline;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);background:var(--bg)}
+.hstat:last-child{border-bottom:none}
+.hstat-n{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.hstat-l{font-size:0.8rem;color:var(--ink3);font-weight:300;text-align:right}
+
+/* COMPANIES */
+.companies-s{padding:5rem 0;border-bottom:1px solid var(--border)}
+.companies-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem}
+.logos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.logo-cell{background:var(--paper);display:flex;align-items:center;justify-content:center;padding:2.25rem 1.5rem;min-height:100px;transition:background 0.2s;position:relative}
+.logo-cell:hover{background:var(--bg)}
+.logo-cell-name{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--ink);letter-spacing:0.02em;opacity:0.75;transition:opacity 0.2s}
+.logo-cell:hover .logo-cell-name{opacity:0.85}
+/* When you have a real logo: put <img> inside .logo-cell. The img will be styled below */
+.logo-cell img{max-height:36px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.5;transition:all 0.2s}
+.logo-cell:hover img{opacity:0.8;filter:grayscale(0.3)}
+.logo-cell-empty .logo-cell-name{font-family:var(--fb);font-size:0.75rem;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);opacity:0.4}
+
+/* PHOTO SECTIONS */
+.photo-grid-a{display:grid;grid-template-columns:1.55fr 0.68fr 0.77fr;grid-template-rows:440px;gap:2px;background:var(--border2)}
+.photo-grid-b{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:380px;gap:2px;background:var(--border2)}
+.photo-slot{background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.photo-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.625rem;border:1px dashed var(--border)}
+.photo-ph-icon{opacity:0.25}
+.photo-ph-lbl{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);opacity:0.5}
+.photo-ph-dim{font-size:0.6rem;color:var(--ink3);opacity:0.3}
+.photo-slot:has(img) .photo-ph{display:none}
+
+/* METHOD */
+.method-s{padding:6rem 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative}
+.method-dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot) 1.2px,transparent 1.2px);background-size:28px 28px;pointer-events:none;opacity:0.35}
+.method-wrap{position:relative;z-index:1}
+.method-head{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:4.5rem}
+
+/* FLOW */
+.flow-track{position:relative;margin-bottom:3.5rem}
+.flow-line{position:absolute;top:11px;left:1.5rem;right:1.5rem;height:1px;background:var(--teal);opacity:0.5}
+.flow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
+.flow-step{padding-top:2.5rem;position:relative}
+.flow-dot{position:absolute;top:0;left:0;width:22px;height:22px;border-radius:50%;background:var(--paper);border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center}
+.flow-dot-inner{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.flow-num{font-family:var(--fd);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.625rem}
+.flow-h{font-family:var(--fd);font-size:1.3rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.625rem}
+.flow-body{font-size:0.9rem;color:var(--ink2);line-height:1.78;font-weight:300}
+
+/* BEFORE AFTER */
+.ba{display:grid;grid-template-columns:1fr 44px 1fr;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:3.5rem}
+.ba-col{padding:2rem 2.5rem}
+.ba-left{background:var(--bg)}
+.ba-right{background:rgba(56,178,170,0.04)}
+.ba-head{font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem}
+.ba-head-before{color:var(--ink3)}
+.ba-head-after{color:var(--teal)}
+.ba-items{display:flex;flex-direction:column;gap:0.75rem}
+.ba-item{font-size:0.9375rem;color:var(--ink2);display:flex;align-items:flex-start;gap:0.75rem;font-weight:300}
+.ba-right .ba-item{color:var(--ink)}
+.ba-sep{display:flex;align-items:center;justify-content:center;background:var(--ink);border-left:1px solid var(--border);border-right:1px solid var(--border)}
+
+/* METHOD QUOTE */
+.method-quote{text-align:center;padding:3rem 2rem;border:1px solid var(--border);border-radius:3px;background:var(--bg)}
+.method-quote-text{font-family:var(--fd);font-size:clamp(1.2rem,2.5vw,1.65rem);font-style:italic;font-weight:300;color:var(--ink);line-height:1.45;margin-bottom:0.875rem}
+.method-quote-attr{font-size:0.8rem;color:var(--ink3);font-weight:300;letter-spacing:0.04em}
+
+/* PROGRAMME */
+.prog-s{padding:6rem 0;border-bottom:1px solid var(--border)}
+.prog-head{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3.5rem}
+.dur-badge{display:inline-flex;align-items:center;gap:0.375rem;border:1px solid var(--border);border-radius:2px;padding:0.3rem 0.75rem;font-size:0.775rem;font-weight:400;color:var(--ink2);margin-bottom:0.875rem;letter-spacing:0.01em}
+.dur-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--yellow-hi);border:1px solid rgba(251,207,44,0.6)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.pillar{background:var(--paper);padding:2.5rem 2.25rem;transition:background 0.2s}
+.pillar:hover{background:var(--bg)}
+.p-n{font-family:var(--fd);font-size:3rem;font-weight:700;color:var(--border2);line-height:1;margin-bottom:1.25rem;letter-spacing:-0.03em}
+.p-h{font-family:var(--fd);font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.625rem}
+.p-body{font-size:0.9rem;color:var(--ink2);line-height:1.78;font-weight:300}
+
+/* TESTIMONIALS */
+.testi-s{padding:6rem 0;background:var(--paper);border-bottom:1px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.testi{background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:2.25rem;display:flex;flex-direction:column;position:relative}
+.testi-mark{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal) 0%,transparent 60%)}
+.t-stars{display:flex;gap:3px;margin-bottom:1.5rem}
+.star{width:10px;height:10px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.t-q{font-family:var(--fd);font-size:0.9375rem;font-style:normal;font-weight:300;line-height:1.72;color:var(--ink);flex:1;margin-bottom:1.5rem;quotes:none}
+.t-rule{width:20px;height:1px;background:var(--teal);margin-bottom:1.25rem}
+.t-name{font-family:var(--fd);font-weight:600;font-size:0.9rem;letter-spacing:0.005em}
+.t-role{font-size:0.8rem;color:var(--ink3);font-weight:300;margin-top:0.2rem;line-height:1.5}
+.t-co{display:inline-block;margin-top:0.4rem;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal)}
+
+/* AI */
+.ai-s{padding:6rem 0;border-bottom:1px solid var(--border)}
+.ai-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.ai-card{background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:2rem;position:relative}
+.ai-card-stripe{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.ai-card-hd{font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+.ai-card-hd::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.prompt-text{font-family:'Courier New',monospace;font-size:0.875rem;line-height:1.65;color:var(--ink);background:var(--bg);padding:1rem;border-radius:2px;border:1px solid var(--border);margin-bottom:1.25rem}
+.copy-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--ink);color:#fff;font-size:0.8rem;font-weight:400;padding:0.5rem 1.125rem;border:none;border-radius:2px;cursor:pointer;font-family:var(--fb);transition:background 0.2s;letter-spacing:0.01em}
+.copy-btn:hover{background:#2a2a26}
+.ai-note{margin-top:0.875rem;font-size:0.775rem;color:var(--ink3);font-weight:300}
+.ai-note strong{color:var(--ink2);font-weight:400}
+
+/* CTA */
+.cta-s{padding:9rem 3rem;background:var(--ink);position:relative;overflow:hidden}
+.cta-lined{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:100% 40px}
+.cta-inner{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.cta-h{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.04;letter-spacing:-0.02em;color:#F5F4F0;margin-bottom:1.25rem}
+.cta-h em{font-style:italic;font-weight:400}
+.cta-h .hi{background:linear-gradient(transparent 58%,rgba(88,217,207,0.28) 58%)}
+.cta-sub{font-size:1rem;color:rgba(245,244,240,0.65);max-width:420px;margin:0 auto 2.5rem;line-height:1.82;font-weight:300}
+.btn-cta{display:inline-block;background:var(--teal);color:var(--ink);font-family:var(--fb);font-size:0.9375rem;font-weight:500;padding:1rem 2.5rem;border-radius:2px;text-decoration:none;letter-spacing:0.01em;transition:opacity 0.2s}
+.btn-cta:hover{opacity:0.88}
+.cta-note{margin-top:1rem;font-size:0.8rem;color:rgba(245,244,240,0.45);font-weight:300}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.75rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--paper)}
+.f-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.f-brand img{height:24px;width:auto;opacity:0.8}
+.f-brand-name{font-family:var(--fd);font-size:0.875rem;font-weight:600;color:var(--ink)}
+.f-copy{font-size:0.775rem;color:var(--ink3);font-weight:300}
+
+
+.logo-ph{display:flex;flex-direction:column;align-items:center;gap:0.375rem;text-align:center}
+.logo-ph-name{font-size:0.8rem;font-weight:600;color:var(--ink2);letter-spacing:-0.01em;opacity:0.5}
+.logo-ph-hint{font-size:0.6rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);opacity:0.35}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(14px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fi.v{opacity:1;transform:none}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-bottom,.method-head,.prog-head,.ai-inner{grid-template-columns:1fr;gap:2.5rem}
+  .flow-steps,.pillar-grid,.testi-grid{grid-template-columns:1fr}
+  .logos-grid{grid-template-columns:repeat(3,1fr)}
+  .ba{grid-template-columns:1fr}
+  .ba-sep{display:none}
+  .ba-right{border-top:1px solid var(--border)}
+  .photo-grid-a{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .photo-grid-a .photo-slot:first-child{grid-column:span 2}
+  .photo-slot{min-height:240px}
+}
+@media(max-width:640px){
+  nav{padding:1rem 1.5rem}
+  .hero,.cta-s{padding-left:1.5rem;padding-right:1.5rem}
+  .hero{padding-top:8rem;padding-bottom:4rem}
+  .w,.method-s,.prog-s,.testi-s,.ai-s{padding-left:1.5rem;padding-right:1.5rem}
+  .logos-grid{grid-template-columns:repeat(2,1fr)}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="brand">
+    <img src="data:image/png;base64,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" alt="Personal Brand Lab">
+    <span class="brand-name">Personal Brand Lab</span>
+  </a>
+  <a href="#book" class="nav-cta">Book a Discovery Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="fi">
+      <p class="hero-tag">Used by Prudential &nbsp;&bull;&nbsp; KPMG &nbsp;&bull;&nbsp; Unilever &nbsp;&bull;&nbsp; Diageo &nbsp;&bull;&nbsp; 3,542+ professionals trained</p>
+      <h1 class="hero-h">Your sales team is losing deals<br>to people who look more<br><em><span class="hi">credible online.</span></em></h1>
+    </div>
+    <div class="hero-bottom">
+      <div class="fi d1">
+        <p class="hero-sub">Personal Brand Lab is a tailored LinkedIn personal branding workshop for sales teams, leadership teams, and financial advisors. Half-day to 3-day format. In-person or virtual. Scoped to your team size and industry.<br><br><strong style="color:var(--ink);font-weight:500">Book a 30-min call and we will audit one of your team member's LinkedIn profiles live — free, whether you work with us or not.</strong></p>
+        <a href="#book" class="btn-primary">Book a Discovery Call &rarr;</a>
+      </div>
+      <div class="fi d2">
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-n">3,542+</span>
+            <span class="hstat-l">Professionals trained</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-n">3h &ndash; 3d</span>
+            <span class="hstat-l">Tailored to your team</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-n" style="color:var(--teal)">Free</span>
+            <span class="hstat-l">LinkedIn audit on your discovery call</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GRID A -->
+<div class="photo-grid-a">
+  <div class="photo-slot"><!-- Add: <img src="your-event-hero.jpg" alt=""> -->
+    <div class="photo-ph"><div class="photo-ph-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8A59E" stroke-width="1"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-3h5L16 6"/></svg></div><span class="photo-ph-lbl">Wide event photo</span><span class="photo-ph-dim">1200 &times; 560px recommended</span></div>
+  </div>
+  <div class="photo-slot"><!-- Add: <img src="trainer.jpg" alt=""> -->
+    <div class="photo-ph"><div class="photo-ph-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8A59E" stroke-width="1"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-3h5L16 6"/></svg></div><span class="photo-ph-lbl">Trainer photo</span><span class="photo-ph-dim">560 &times; 560px</span></div>
+  </div>
+  <div class="photo-slot"><!-- Add: <img src="workshop.jpg" alt=""> -->
+    <div class="photo-ph"><div class="photo-ph-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8A59E" stroke-width="1"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-3h5L16 6"/></svg></div><span class="photo-ph-lbl">Workshop moment</span><span class="photo-ph-dim">660 &times; 560px</span></div>
+  </div>
+</div>
+
+<!-- COMPANIES -->
+<section class="companies-s">
+  <div class="w">
+    <div class="companies-top fi">
+      <div>
+        <p class="sec-eyebrow">Companies We Work With</p>
+        <h2 class="sec-h" style="margin-bottom:0">Trusted by teams<br>at <span class="hi-y">these organisations.</span></h2>
+      </div>
+      <p class="sec-body" style="max-width:380px;align-self:end">These are not small experiments. These are enterprise teams that decided their people needed to be visible, credible, and generating inbound — and invested in making it happen.</p>
+    </div>
+    <div class="logos-grid fi d1" style="grid-template-columns:repeat(4,1fr)">
+      <!--
+        HOW TO ADD LOGOS:
+        Replace each .logo-ph div with: <img src="your-logo.svg" alt="Company Name">
+        Recommended: SVG or PNG with transparent background, max height ~40px
+        Logos will be displayed in grayscale and fade to colour on hover automatically.
+      -->
+      <div class="logo-cell">
+        <div class="logo-ph">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="32" height="16" rx="2" stroke="var(--border)" stroke-width="1.5" fill="none"/><rect x="10" y="18" width="20" height="4" rx="1" fill="var(--border)"/><circle cx="32" cy="12" r="5" fill="var(--border2)" stroke="var(--border)" stroke-width="1.5"/></svg>
+          <span class="logo-ph-name">Prudential</span>
+          <span class="logo-ph-hint">Drop logo here</span>
+        </div>
+      </div>
+      <div class="logo-cell">
+        <div class="logo-ph">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="32" height="16" rx="2" stroke="var(--border)" stroke-width="1.5" fill="none"/><rect x="10" y="18" width="20" height="4" rx="1" fill="var(--border)"/><circle cx="32" cy="12" r="5" fill="var(--border2)" stroke="var(--border)" stroke-width="1.5"/></svg>
+          <span class="logo-ph-name">Unilever</span>
+          <span class="logo-ph-hint">Drop logo here</span>
+        </div>
+      </div>
+      <div class="logo-cell">
+        <div class="logo-ph">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="32" height="16" rx="2" stroke="var(--border)" stroke-width="1.5" fill="none"/><rect x="10" y="18" width="20" height="4" rx="1" fill="var(--border)"/><circle cx="32" cy="12" r="5" fill="var(--border2)" stroke="var(--border)" stroke-width="1.5"/></svg>
+          <span class="logo-ph-name">KPMG</span>
+          <span class="logo-ph-hint">Drop logo here</span>
+        </div>
+      </div>
+      <div class="logo-cell">
+        <div class="logo-ph">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="12" width="32" height="16" rx="2" stroke="var(--border)" stroke-width="1.5" fill="none"/><rect x="10" y="18" width="20" height="4" rx="1" fill="var(--border)"/><circle cx="32" cy="12" r="5" fill="var(--border2)" stroke="var(--border)" stroke-width="1.5"/></svg>
+          <span class="logo-ph-name">Diageo</span>
+          <span class="logo-ph-hint">Drop logo here</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method-s" id="method">
+  <div class="method-dots"></div>
+  <div class="w method-wrap">
+    <div class="method-head fi">
+      <div>
+        <p class="sec-eyebrow">Why It Works</p>
+        <h2 class="sec-h">Most sales training<br>stops at the<br><em><span class="hi">workshop door.</span></em></h2>
+      </div>
+      <p class="sec-body">Skills training fades in 30 days. A personal brand compounds every day. Our <strong style="color:var(--ink);font-weight:500">Connect to Commercialize</strong> method gives your team a system they will still be using two years from now — one that makes every other skill they have work harder by making them more trusted before the first call is ever made.</p>
+    </div>
+
+    <!-- FLOW -->
+    <div class="flow-track fi d1">
+      <div class="flow-line"></div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+          <p class="flow-num">01 &mdash; Connect</p>
+          <h3 class="flow-h">Show up.<br>Be human.</h3>
+          <p class="flow-body">We give your team a repeatable system to show up on LinkedIn without it taking over their day. 20 minutes a day. A presence that builds while they sleep.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+          <p class="flow-num">02 &mdash; Build Authority</p>
+          <h3 class="flow-h">Become the<br>trusted voice.</h3>
+          <p class="flow-body">When a prospect Googles your salesperson and finds 60 posts full of genuine insight, the meeting is halfway closed before it starts. That is the compounding effect.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-dot"><div class="flow-dot-inner"></div></div>
+          <p class="flow-num">03 &mdash; Commercialize</p>
+          <h3 class="flow-h">Attract clients.<br>Close faster.</h3>
+          <p class="flow-body">Inbound leads. Shorter sales cycles. Warmer first meetings. The personal brand becomes the highest-ROI asset on your team — and it costs nothing to maintain.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEFORE / AFTER -->
+    <div class="ba fi d2">
+      <div class="ba-col ba-left">
+        <p class="ba-head ba-head-before">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 2L2 10M2 2l8 8" stroke="#A8A59E" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Without personal branding
+        </p>
+        <div class="ba-items">
+          <div class="ba-item"><span style="color:var(--ink3);font-size:0.75rem;margin-top:3px;flex-shrink:0">&#8722;</span> Cold outreach with low response rates</div>
+          <div class="ba-item"><span style="color:var(--ink3);font-size:0.75rem;margin-top:3px;flex-shrink:0">&#8722;</span> Prospects who go silent after checking LinkedIn</div>
+          <div class="ba-item"><span style="color:var(--ink3);font-size:0.75rem;margin-top:3px;flex-shrink:0">&#8722;</span> Sales cycles that drag longer than they should</div>
+          <div class="ba-item"><span style="color:var(--ink3);font-size:0.75rem;margin-top:3px;flex-shrink:0">&#8722;</span> Your best people invisible to their ideal clients</div>
+        </div>
+      </div>
+      <div class="ba-sep">
+        <svg width="16" height="36" viewBox="0 0 16 36" fill="none"><path d="M2 18h12M8 13l5 5-5 5" stroke="rgba(56,178,170,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ba-col ba-right">
+        <p class="ba-head ba-head-after">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-6" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          With Personal Brand Lab
+        </p>
+        <div class="ba-items">
+          <div class="ba-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;margin-top:4px"><path d="M2 6l3 3 5-6" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="hi">Inbound leads</span> that warm up before the first call</div>
+          <div class="ba-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;margin-top:4px"><path d="M2 6l3 3 5-6" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Prospects who recognise and respect your team before meeting</div>
+          <div class="ba-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;margin-top:4px"><path d="M2 6l3 3 5-6" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="hi-y">Shorter sales cycles</span> built on pre-existing trust</div>
+          <div class="ba-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;margin-top:4px"><path d="M2 6l3 3 5-6" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> A team of visible, credible industry voices</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-quote fi d3">
+      <p class="method-quote-text">"Revenue is a byproduct of trust.<br>Build the trust first, on LinkedIn, every day."</p>
+      <p class="method-quote-attr">Sam Neo &bull; Founder, Personal Brand Lab</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- INLINE CTA 1 -->
+<div style="background:var(--teal);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+  <div>
+    <p style="font-family:var(--fd);font-size:1.35rem;font-weight:600;color:var(--ink);letter-spacing:-0.015em;line-height:1.3">Ready to see how this works for your team?</p>
+    <p style="font-size:0.875rem;color:rgba(20,20,18,0.65);margin-top:0.25rem;font-weight:300">30 minutes. No pitch. We scope it around your goals.</p>
+  </div>
+  <a href="#book" style="background:var(--ink);color:#fff;font-family:var(--fb);font-size:0.875rem;font-weight:500;padding:0.875rem 2rem;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s">Book a Discovery Call &rarr;</a>
+</div>
+
+<!-- PROGRAMME -->
+<section class="prog-s" id="programme">
+  <div class="w">
+    <div class="prog-head fi">
+      <div>
+        <p class="sec-eyebrow">The Programme</p>
+        <div class="dur-badge">Flexible: 3-hour intensive to 3-day deep-dive</div>
+        <h2 class="sec-h">Built around<br>your team. Not<br><span class="hi">a template.</span></h2>
+      </div>
+      <p class="sec-body" style="padding-top:1rem">Generic programmes get forgotten in 30 days. We build every engagement around your team's industry, their clients, and their current gaps. The content is specific enough that participants recognise themselves in it — and that is why it sticks.</p>
+    </div>
+    <div class="pillar-grid fi d1">
+      <div class="pillar"><div class="p-n" style="color:var(--teal);-webkit-text-stroke:0">01</div><h3 class="p-h">Brand Foundation</h3><p class="p-body">Each salesperson clarifies their professional story and what makes them distinct. We help them articulate expertise that resonates with their target clients.</p></div>
+      <div class="pillar"><div class="p-n" style="color:var(--teal);opacity:0.6;-webkit-text-stroke:0">02</div><h3 class="p-h">Content That Attracts</h3><p class="p-body">A repeatable content system: how to write posts that build thought leadership and generate inbound interest without sounding like a sales pitch.</p></div>
+      <div class="pillar"><div class="p-n" style="color:var(--teal);opacity:0.35;-webkit-text-stroke:0">03</div><h3 class="p-h">Relationships at Scale</h3><p class="p-body">We train your team to engage meaningfully, build warm networks, and turn connections into conversations and conversations into clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-s">
+  <div class="w">
+    <div class="fi">
+      <p class="sec-eyebrow">Proof</p>
+      <h2 class="sec-h">Not our words.<br><em>Theirs.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi fi d1"><div class="testi-mark"></div><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-q">Sam does not just share knowledge, he <span class="hi-y">ignites motivation.</span> His ability to convey the power of LinkedIn is impressive. I am confident his expertise will <span class="hi">greatly benefit</span> anyone looking to enhance their personal brand.</p><div class="t-rule"></div><p class="t-name">Lillian Cher</p><p class="t-role">Financial Services Director</p><span class="t-co">Prudential</span></div>
+      <div class="testi fi d2"><div class="testi-mark"></div><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-q">Through Sam's mentoring, I learned how to develop a content strategy that helped me <span class="hi">project my professional voice</span> and <span class="hi-y">grow my reach on LinkedIn.</span> Highly recommend Sam and his team.</p><div class="t-rule"></div><p class="t-name">Pooi-San Kok</p><p class="t-role">Asia Pacific Head of Innovation, Beer and RTD</p><span class="t-co">Diageo</span></div>
+      <div class="testi fi d3"><div class="testi-mark"></div><div class="t-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="t-q">Over 8 weeks, I found a <span class="hi-y">consistent way</span> to curate thoughtful personal posts. I found it tough to be vulnerable online before this. With Sam's help, I find myself <span class="hi">improving day by day.</span></p><div class="t-rule"></div><p class="t-name">Estelle Lin</p><p class="t-role">Private Wealth Consultant</p><span class="t-co">Prudential</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INLINE CTA 2 -->
+<div style="padding:4rem 3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+  <div style="max-width:560px">
+    <p style="font-size:0.725rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem">3,542+ professionals trained</p>
+    <p style="font-family:var(--fd);font-size:1.35rem;font-weight:600;color:var(--ink);letter-spacing:-0.015em;line-height:1.35">The decision-maker who reads this page<br>and does nothing is the biggest risk.</p>
+  </div>
+  <a href="#book" style="background:var(--ink);color:#fff;font-family:var(--fb);font-size:0.875rem;font-weight:500;padding:0.875rem 2rem;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s">Book a Discovery Call &rarr;</a>
+</div>
+
+<!-- PHOTO GRID B -->
+<div class="photo-grid-b">
+  <div class="photo-slot"><!-- Add: <img src="group.jpg" alt=""> -->
+    <div class="photo-ph"><div class="photo-ph-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8A59E" stroke-width="1"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-3h5L16 6"/></svg></div><span class="photo-ph-lbl">Group or post-session photo</span><span class="photo-ph-dim">900 &times; 600px</span></div>
+  </div>
+  <div class="photo-slot"><!-- Add: <img src="candid.jpg" alt=""> -->
+    <div class="photo-ph"><div class="photo-ph-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8A59E" stroke-width="1"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-3h5L16 6"/></svg></div><span class="photo-ph-lbl">Candid workshop moment</span><span class="photo-ph-dim">900 &times; 600px</span></div>
+  </div>
+</div>
+
+
+<!-- RESULTS -->
+<section style="padding:5rem 0;border-bottom:1px solid var(--border);background:var(--paper)">
+  <div class="w">
+    <div class="fi" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:3.5rem">
+      <div>
+        <p class="sec-eyebrow">What Changes After the Programme</p>
+        <h2 class="sec-h" style="margin-bottom:0">Measurable shifts.<br><em>In real teams.</em></h2>
+      </div>
+      <p class="sec-body">These are the patterns we see consistently across every programme, from 3-hour intensives to 3-day deep-dives across financial services, FMCG and professional services.</p>
+    </div>
+    <div class="fi d1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+      <div style="background:var(--bg);padding:2.25rem 2rem">
+        <div style="font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-0.02em;margin-bottom:0.75rem">3,542<span style="font-size:1.5rem">+</span></div>
+        <p style="font-size:0.875rem;font-weight:600;color:var(--ink);margin-bottom:0.375rem">Professionals trained</p>
+        <p style="font-size:0.8125rem;color:var(--ink2);font-weight:300;line-height:1.6">Sales teams, leadership teams, and financial advisors across financial services, FMCG, and professional services in Asia.</p>
+      </div>
+      <div style="background:var(--bg);padding:2.25rem 2rem;border-left:1px solid var(--border)">
+        <div style="font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-0.02em;margin-bottom:0.75rem">8 <span style="font-size:1.5rem;font-weight:400">wks</span></div>
+        <p style="font-size:0.875rem;font-weight:600;color:var(--ink);margin-bottom:0.375rem">To visible results</p>
+        <p style="font-size:0.8125rem;color:var(--ink2);font-weight:300;line-height:1.6">Participants report stronger inbound connection requests and warmer first meetings within the first 8 weeks. Most see profile view increases within 30 days.</p>
+      </div>
+      <div style="background:var(--bg);padding:2.25rem 2rem;border-left:1px solid var(--border)">
+        <div style="font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--teal);line-height:1;letter-spacing:-0.02em;margin-bottom:0.75rem">Inbound</div>
+        <p style="font-size:0.875rem;font-weight:600;color:var(--ink);margin-bottom:0.375rem">The shift that matters</p>
+        <p style="font-size:0.8125rem;color:var(--ink2);font-weight:300;line-height:1.6">From chasing cold prospects to being found by warm ones who already trust you. The brand does the work between every meeting.</p>
+      </div>
+    </div>
+
+    <!-- DECISION-MAKER TESTIMONIAL PLACEHOLDER -->
+    <div class="fi d2" style="margin-top:1.25rem;background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:3px;padding:2rem 2.25rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem">
+      </div>
+</section>
+
+<!-- AI -->
+<section class="ai-s">
+  <div class="w">
+    <div class="ai-inner">
+      <div class="fi">
+        <p class="sec-eyebrow">Verified by AI</p>
+        <h2 class="sec-h">Do not take our<br>word for it.<br><em><span class="hi-y">Ask ChatGPT.</span></em></h2>
+        <p class="sec-body" style="margin-top:0.75rem">We have worked with enough companies that the internet has noticed. Try this prompt on any AI assistant and see what comes back.</p>
+      </div>
+      <div class="fi d1">
+        <div class="ai-card">
+          <div class="ai-card-stripe"></div>
+          <p class="ai-card-hd">Paste into ChatGPT, Perplexity or Gemini</p>
+          <div class="prompt-text" id="aiPrompt">Tell me about Sam Neo from Personal Brand Lab in Singapore. What do companies say about his personal branding training for sales teams?</div>
+          <button class="copy-btn" onclick="copyPrompt()">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="5.5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 10.5H2A1.5 1.5 0 0 1 .5 9V2A1.5 1.5 0 0 1 2 .5h7A1.5 1.5 0 0 1 10.5 2v1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span id="copyLabel">Copy prompt</span>
+          </button>
+          <p class="ai-note">Works on <strong>ChatGPT, Perplexity, Gemini</strong> and any AI assistant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SAM BIO -->
+<section style="padding:6rem 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="w">
+    <div class="fi" style="display:grid;grid-template-columns:340px 1fr;gap:5rem;align-items:start">
+
+      <!-- PHOTO -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div style="aspect-ratio:4/5;background:var(--bg);border:1px solid var(--border);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;overflow:hidden;position:relative">
+          <!--
+            ADD SAM'S PHOTO:
+            Replace this entire inner div with:
+            <img src="sam-neo.jpg" alt="Sam Neo" style="width:100%;height:100%;object-fit:cover;display:block">
+          -->
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="10" stroke="var(--border)" stroke-width="1.5" fill="none"/><path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="var(--border)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <p style="font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);opacity:0.5">Add Sam's photo here</p>
+        </div>
+        <!-- MINI STATS -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+          <div style="background:var(--bg);padding:1rem 1.25rem">
+            <div style="font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1">3,542+</div>
+            <div style="font-size:0.75rem;color:var(--ink3);margin-top:0.2rem;font-weight:300">Professionals trained</div>
+          </div>
+          <div style="background:var(--bg);padding:1rem 1.25rem;border-left:1px solid var(--border)">
+            <div style="font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1">10+</div>
+            <div style="font-size:0.75rem;color:var(--ink3);margin-top:0.2rem;font-weight:300">Years in the field</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIO -->
+      <div style="padding-top:0.5rem">
+        <p style="font-size:0.725rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.875rem;display:flex;align-items:center;gap:0.5rem"><span style="display:inline-block;width:20px;height:1.5px;background:var(--teal)"></span>Your Trainer</p>
+        <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,2.8rem);font-weight:600;line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.375rem">Sam Neo</h2>
+        <p style="font-size:0.875rem;font-weight:500;color:var(--teal);letter-spacing:0.02em;margin-bottom:2rem">Founder, Personal Brand Lab</p>
+
+        <p style="font-size:1rem;color:var(--ink2);line-height:1.85;font-weight:300;margin-bottom:1rem">Sam has trained 3,542+ professionals across Asia in one skill that makes every other skill work harder: being visible to the right people before the first conversation. He is not a social media consultant. He is a former CHRO who understands the gap between what training promises and what it actually delivers.</p>
+
+        <p style="font-size:1rem;color:var(--ink2);line-height:1.85;font-weight:300;margin-bottom:2rem">He has built programmes for Prudential, Unilever, KPMG, and Diageo. He does not deliver the same deck twice. Every programme starts with one question: what does it take for your specific people to be the names their clients think of first? Then he builds backwards from that.</p>
+
+        <div style="display:flex;flex-direction:column;gap:0.625rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;font-size:0.9rem;color:var(--ink2);font-weight:300">
+            <span style="width:4px;height:4px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:9px"></span>
+            Founder of Personal Brand Lab, Stories of Asia, and Kodee
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;font-size:0.9rem;color:var(--ink2);font-weight:300">
+            <span style="width:4px;height:4px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:9px"></span>
+            Former CHRO — he understands what L&amp;D buyers need from a programme
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;font-size:0.9rem;color:var(--ink2);font-weight:300">
+            <span style="width:4px;height:4px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:9px"></span>
+            Programmes tailored to every team — not off-the-shelf slides
+          </div>
+        </div>
+
+        <div style="margin-top:2rem">
+          <a href="#book" class="btn-primary">Work with Sam &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:6rem 0;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="w">
+    <div class="fi" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+      <div>
+        <p class="sec-eyebrow">Before You Book</p>
+        <h2 class="sec-h">Questions we<br>get asked most.</h2>
+        <p class="sec-body" style="margin-top:0.75rem">If yours is not here, just ask on the discovery call. There are no wrong questions.</p>
+      </div>
+      <div id="faq-list" style="display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+
+        <div class="faq-item" onclick="toggleFaq(this)" style="background:var(--bg);cursor:pointer">
+          <div class="faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem">
+            <span style="font-size:0.9375rem;font-weight:500;color:var(--ink)">Is this online or in-person?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;transition:transform 0.25s"><path d="M3 6l5 5 5-5" stroke="var(--ink2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p style="padding:0 1.5rem 1.25rem;font-size:0.9rem;color:var(--ink2);font-weight:300;line-height:1.78">Both. We design around your team. Full-day in-person workshops, virtual sessions, or blended. 3-hour intensives to 3-day deep-dives. We have run it for 10 people and for 200+. The format fits you, not the other way around.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)" style="background:var(--bg);cursor:pointer">
+          <div class="faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem">
+            <span style="font-size:0.9375rem;font-weight:500;color:var(--ink)">How many people can join one programme?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;transition:transform 0.25s"><path d="M3 6l5 5 5-5" stroke="var(--ink2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p style="padding:0 1.5rem 1.25rem;font-size:0.9rem;color:var(--ink2);font-weight:300;line-height:1.78">We have run cohorts of 10 and workshops for 200+. Group size does not limit impact. What limits impact is running a generic programme. We do not do that.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)" style="background:var(--bg);cursor:pointer">
+          <div class="faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem">
+            <span style="font-size:0.9375rem;font-weight:500;color:var(--ink)">How do we measure success?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;transition:transform 0.25s"><path d="M3 6l5 5 5-5" stroke="var(--ink2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p style="padding:0 1.5rem 1.25rem;font-size:0.9rem;color:var(--ink2);font-weight:300;line-height:1.78">We track profile completeness, posting frequency, engagement rate, and inbound connection quality — before and after. Most participants report measurable LinkedIn activity changes within 30 days. Visible pipeline impact typically shows within 60 to 90 days.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)" style="background:var(--bg);cursor:pointer">
+          <div class="faq-q" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem">
+            <span style="font-size:0.9375rem;font-weight:500;color:var(--ink)">How do we get started?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;transition:transform 0.25s"><path d="M3 6l5 5 5-5" stroke="var(--ink2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p style="padding:0 1.5rem 1.25rem;font-size:0.9rem;color:var(--ink2);font-weight:300;line-height:1.78">Book a 30-minute call. We audit one of your team member's LinkedIn profiles live on the call — you see exactly what we would fix and why. You keep the audit whether you run a programme or not. Zero risk.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-s" id="book">
+  <div class="cta-lined"></div>
+  <div class="cta-inner fi">
+    <h2 class="cta-h">Ready to make your sales team <em><span class="hi">unforgettable?</span></em></h2>
+    <p class="cta-sub">Book a free 30-minute discovery call. We will understand your team goals and walk you through how the programme works.</p>
+    <a href="mailto:hello@personalbrandlab.com" class="btn-cta">Book a Discovery Call &rarr;</a>
+    <p class="cta-note">30 minutes &bull; No pitch &bull; We scope it together &bull; You decide if it fits</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="f-brand">
+    <img src="data:image/png;base64,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" alt="Personal Brand Lab">
+    <span class="f-brand-name">Personal Brand Lab</span>
+  </a>
+  <span class="f-copy">&copy; 2025 Personal Brand Lab. All rights reserved.</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})},{threshold:0.07});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+function copyPrompt(){const t=document.getElementById('aiPrompt').innerText;navigator.clipboard.writeText(t).then(()=>{const l=document.getElementById('copyLabel');l.textContent='Copied!';setTimeout(()=>l.textContent='Copy prompt',2000)})}
+
+function toggleFaq(el){
+  const a=el.querySelector('.faq-a');
+  const icon=el.querySelector('.faq-icon');
+  const open=a.style.maxHeight&&a.style.maxHeight!=='0px';
+  document.querySelectorAll('.faq-a').forEach(x=>x.style.maxHeight='0px');
+  document.querySelectorAll('.faq-icon').forEach(x=>x.style.transform='rotate(0deg)');
+  if(!open){a.style.maxHeight=a.scrollHeight+'px';icon.style.transform='rotate(180deg)'}
+}
+
+</script>
+</body>
+</html>
